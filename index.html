@@ -2,26 +2,160 @@
 <html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
-    <title>唔使媽咪擦 NoEraserMommy</title>
+    <title>唔使媽咪擦 NoEraserMommy - 智能作業輔助工具</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body, html { 
-            margin: 0; 
-            padding: 0; 
-            height: 100%; 
-            overflow: hidden; 
-            background-color: #FFE6D9; 
-        }
-        iframe { 
-            width: 100%; 
-            height: 100%; 
-            border: none; 
-        }
-    </style>
     <!-- Google AdSense 驗證與自動廣告代碼 -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6074839973481448" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --bg-color: #FFE6D9;
+            --primary-color: #FF7E67;
+            --text-color: #4A4A4A;
+            --card-bg: #FFFFFF;
+        }
+        body { 
+            margin: 0; 
+            padding: 0; 
+            font-family: "Helvetica Neue", Helvetica, Arial, "PingFang TC", "Heiti TC", "Microsoft JhengHei", sans-serif;
+            background-color: var(--bg-color); 
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        header {
+            background-color: var(--card-bg);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        h1 { margin: 0; color: var(--primary-color); font-size: 2rem; }
+        p.subtitle { margin: 5px 0 0 0; color: #888; font-size: 1rem; }
+        
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        
+        /* 介紹區塊 */
+        .intro-section {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        .intro-section h2 {
+            color: var(--primary-color);
+            border-left: 5px solid var(--primary-color);
+            padding-left: 10px;
+            margin-top: 0;
+        }
+
+        /* 特色區塊 */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .feature-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            text-align: center;
+        }
+        .feature-card h3 { color: var(--primary-color); margin-top: 0; }
+
+        /* Streamlit 應用程式區塊 */
+        .app-section {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        .app-container {
+            width: 100%;
+            height: 750px; /* 固定高度，讓網頁可以滾動 */
+            border: 2px solid #FFE6D9;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        iframe { width: 100%; height: 100%; border: none; }
+
+        /* 隱私權政策區塊（AdSense必備） */
+        .privacy-section {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 40px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #888;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
-    <iframe src="https://no-eraser-mommy.streamlit.app/?embed=true"></iframe>
+
+    <header>
+        <h1>唔使媽咪擦 NoEraserMommy</h1>
+        <p class="subtitle">讓小朋友學習更自主，減少家庭作業摩擦的智能輔助工具</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- 介紹區區塊（給 Google 爬蟲看的高價值文字） -->
+        <section class="intro-section">
+            <h2>關於「唔使媽咪擦」</h2>
+            <p><strong>唔使媽咪擦 (NoEraserMommy)</strong> 是一款專為家長與學童設計的智能作業輔助工具。在陪伴孩子寫作業的過程中，反覆擦拭錯字、重新書寫往往是造成親子衝突與學習挫折的主要原因。</p>
+            <p>本工具旨在透過現代技術，協助家長與孩子在「不需反覆擦拭」的情況下，輕鬆記錄、辨識與修正作業中的錯誤，提升學習效率，並維護溫馨的親子關係。我們相信，學習應該是充滿成就感且無壓力的過程。</p>
+        </section>
+
+        <!-- 特色區塊 -->
+        <section class="features">
+            <div class="feature-card">
+                <h3>無痛修正</h3>
+                <p>減少因反覆擦改作業而產生的紙張破損與孩子的挫折感，保持作業本乾淨整潔。</p>
+            </div>
+            <div class="feature-card">
+                <h3>親子減壓</h3>
+                <p>將「糾錯」的過程變得更有趣、更客觀，降低家長輔導作業時的情緒壓力。</p>
+            </div>
+            <div class="feature-card">
+                <h3>自主學習</h3>
+                <p>引導小朋友學會自我檢查與修正，培養獨立思考與自主解決問題的能力。</p>
+            </div>
+        </section>
+
+        <!-- 工具體驗區塊 -->
+        <section class="app-section">
+            <h2 style="color: var(--primary-color); margin-top: 0;">開始體驗智能工具</h2>
+            <p style="font-size: 0.9rem; color: #666;">您可以在下方直接使用我們的智能輔助系統。若畫面載入較慢，請稍候片刻。</p>
+            <div class="app-container">
+                <!-- 嵌入你的 Streamlit App -->
+                <iframe src="https://no-eraser-mommy.streamlit.app/?embed=true"></iframe>
+            </div>
+        </section>
+
+        <!-- 隱私政策（AdSense審核極度加分項） -->
+        <section class="privacy-section">
+            <h3>隱私權政策與廣告說明 (Privacy Policy)</h3>
+            <p>歡迎訪問 <strong>nomummy.com</strong>（以下簡稱「本網站」）。我們極為重視您的隱私權。本網站為獨立工具平台，本身不會主動收集、儲存或洩漏您上傳的任何個人識別資料或作業圖片。</p>
+            <p>我們使用 Google AdSense 作為第三方廣告服務商。Google 會使用 Cookie 在本網站上向您投放廣告。您可隨時透過 Google 廣告和內容網路隱私權政策頁面，選擇不使用 DART Cookie。繼續使用本網站即代表您同意本隱私聲明。</p>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 唔使媽咪擦 NoEraserMommy. All Rights Reserved.</p>
+    </footer>
+
 </body>
 </html>
